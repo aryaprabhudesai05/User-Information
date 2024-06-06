@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>User Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 10;
+            padding: 0;
+        }
+
+        form {
+            border: 2px solid #ccc;
+            padding: 20px;
+            width: 50%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        form:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h4 {
+            color: #666;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 3px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: calc(100% - 20px); /* Adjusted for padding and border */
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #66afe9;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .submitted-info {
+            border: 2px solid #ccc;
+            padding: 20px;
+            width: 50%;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        .submitted-info:hover {
+            border-color: #66afe9;
+        }
+
+        .submitted-info h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .submitted-info p {
+            margin-bottom: 5px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <form name="userInfoForm" action="insert_user.php" method="post" enctype="multipart/form-data">
+        <h1>USER INFORMATION</h1>
+        <h4>
+            <label>Profile Picture:</label><br>
+            <input type="file" id="profilePic" name="profile_image" style="display: none;">
+            <button type="button" onclick="document.getElementById('profilePic').click();">Choose Picture</button><br><br>
+            <label>Name:</label>
+            <input type="text" name="name" required><br>
+            <label>Contact:</label>
+            <input type="number" name="contact" required><br>
+            <label>Email:</label>
+            <input type="email" name="email" required><br>
+            <label>Gender:</label><br>
+            <input type="radio" name="gender" value="Male" required> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other<br>
+            <label>Address:</label><br>
+            <textarea name="address" required></textarea><br>
+            <label>Qualification:</label><br>
+            <select name="qualification[]" multiple required>
+    <option value="BSC">BSC</option>
+    <option value="Diploma">Diploma</option>
+    <option value="Degree">Degree</option>
+    <option value="MCA">MCA</option>
+    <option value="ITI">ITI</option>
+    <option value="other">Other</option>
+</select><br><br>
+               <!-- Your form inputs here -->
+ <input type="submit" value="submit">
+<a href="view_user.php" target="_blank"><button type="button">View Saved Data</button></a>
+            </h4>
+    </form>
+    
+</html>
+
